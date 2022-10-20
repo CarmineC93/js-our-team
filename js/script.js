@@ -37,20 +37,28 @@ const ourTeam = [
 
 /*[x]MILESTONE 1:
 Stampare su console le informazioni di nome, ruolo e la stringa della foto*/ 
-/*[]MILESTONE 2:
+/*[x]MILESTONE 2:
 Stampare le stesse informazioni su DOM sottoforma di stringhe
-[]BONUS 1:
+[x]BONUS 1:
 Trasformare la stringa foto in una immagine effettiva
-[]BONUS 2:
+[x]BONUS 2:
 Organizzare i singoli membri in card/schede. Se non vi sentite particolarmente creativi, potete prendere uno spunto dallo screenshot allegato.
 */
 
-const cols = document.getElementsByClassName(".col");
+const cols = document.getElementsByClassName("col");
+
 
 for(let i=0; i<ourTeam.length; i++){
     const memberTeam = ourTeam[i];
     console.log (memberTeam.name, memberTeam.role, memberTeam.pic);
-    cols.innerHTML += `<span> <img src="img/${memberTeam.pic}"> <h3>${memberTeam.name}</h3> <h4>${memberTeam.role}</h4> </span>`
+    const col = cols[i];
+    col.innerHTML +=    `<span> 
+                            <img src="img/${memberTeam.pic}"> 
+                            <div class = "text-center">
+                                <h3>${memberTeam.name}</h3> 
+                                <h4>${memberTeam.role}</h4> 
+                            </div>
+                        </span>`
 }
 
 
